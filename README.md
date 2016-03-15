@@ -9,7 +9,7 @@
 
 converter img spriter meta datasource to style sheet(css)
 
-## Eaample
+## Example
 
 ```js
 var transfrom = require('img-spriter-transfrom');
