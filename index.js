@@ -22,6 +22,33 @@ function isEmpty(val) {
   return true;
 }
 
+// https://github.com/jakubpawlowicz/clean-css
+var minifyCSSOptions = {
+  keepBreaks: true,
+  compatibility: {
+    colors: {
+      opacity: true // rgba / hsla
+    },
+    properties: {
+      backgroundSizeMerging: false, // background-size to shorthand
+      iePrefixHack: true, // underscore / asterisk prefix hacks on IE
+      ieSuffixHack: true, // \9 suffix hacks on IE
+      merging: false, // merging properties into one
+      spaceAfterClosingBrace: true, // 'url() no-repeat' to 'url()no-repeat'
+      zeroUnits: true // 0[unit] -> 0
+    },
+    selectors: {
+      adjacentSpace: false, // div+ nav Android stock browser hack
+      ie7Hack: true, // *+html hack
+      special: /(\-moz\-|\-ms\-|\-o\-|\-webkit\-|:dir\([a-z-]*\)|:first(?![a-z-])|:fullscreen|:left|:read-only|:read-write|:right)/ // special selectors which prevent merging
+    },
+    units: {
+      rem: true
+    }
+  },
+  advanced: false
+}
+
 module.exports = function(dataSource) {
   return new Promise(function(resolve, reject) {
     if (isEmpty(dataSource)) {
@@ -54,7 +81,7 @@ module.exports = function(dataSource) {
     dataSource.pkg = pkg
     try {
       var style = swigTemplate(dataSource);
-      // style = new CleanCSS().minify(style).styles;
+      style = new CleanCSS(minifyCSSOptions).minify(style).styles;
       resolve(style)
     } catch (err) {
       reject(err);

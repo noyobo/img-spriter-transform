@@ -6,29 +6,6 @@
  * @sprite_path http://img.alicdn.com/tps/i3/TB1tyYSLVXXXXawaXXXiSaHIXXX-65-42.png
  * @sprite_path_lossy http://img.alicdn.com/tps/i4/TB15BscLVXXXXbMXXXXiSaHIXXX-65-42.png
  */
-
-.icon-bace-1212c,
-.icon-bace-tianmaoguoji {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  font-size: 0;
-  background: url(http://img.alicdn.com/tps/i3/TB1tyYSLVXXXXawaXXXiSaHIXXX-65-42.png);
-  background-repeat: no-repeat;
-  _background-image: url(http://img.alicdn.com/tps/i4/TB15BscLVXXXXbMXXXXiSaHIXXX-65-42.png);
-}
-
-
-/* 坐标信息 */
-
-.icon-bace-1212c {
-  background-position: 0px 0px;
-  width: 60px;
-  height: 16px;
-}
-
-.icon-bace-tianmaoguoji {
-  background-position: 0px -21px;
-  width: 50px;
-  height: 16px;
-}
+.icon-bace-1212c,.icon-bace-tianmaoguoji{display:inline-block;*display:inline;*zoom:1;font-size:0;background:url(http://img.alicdn.com/tps/i3/TB1tyYSLVXXXXawaXXXiSaHIXXX-65-42.png);background-repeat:no-repeat;_background-image:url(http://img.alicdn.com/tps/i4/TB15BscLVXXXXbMXXXXiSaHIXXX-65-42.png)}
+.icon-bace-1212c{background-position:0 0;width:60px;height:16px}
+.icon-bace-tianmaoguoji{background-position:0 -21px;width:50px;height:16px}

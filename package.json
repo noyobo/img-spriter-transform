@@ -6,11 +6,26 @@
   "scripts": {
     "test": "node ./test/test.js"
   },
+  "files": [
+    "lib/",
+    "index.js"
+  ],
   "keywords": [
     "sprite",
     "css",
     "sprite"
   ],
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noyobo/img-spriter-transfrom.git"
+  },
+  "bugs": {
+    "url": "https://github.com/noyobo/img-spriter-transfrom/issues"
+  },
+  "homepage": "https://github.com/noyobo/img-spriter-transfrom#readme",
   "author": "noyobo <noyobo@gmail.com>",
   "license": "MIT",
   "dependencies": {
