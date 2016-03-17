@@ -1,6 +1,6 @@
 {
   "name": "img-spriter-transfrom",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "converter img spriter meta datasource to style sheet(css)",
   "main": "index.js",
   "scripts": {
