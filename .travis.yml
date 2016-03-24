@@ -2,8 +2,12 @@ language: node_js
 
 sudo: false
 
+notifications:
+  email:
+  - noyobo@gmail.com
+
 node_js:
-  - 4.x
+  - 4
   - stable
 
 before_script:
