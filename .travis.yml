@@ -10,11 +10,4 @@ node_js:
   - 4
   - stable
 
-before_script:
-  - npm i coveralls istanbul mocha
-
-script:
-  - npm test
-
-after_script:
-  - NODE_ENV=test istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+after_success: npm run coveralls
