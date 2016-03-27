@@ -1,4 +1,5 @@
 'use strict';
+
 var fs = require('fs');
 var path = require('path');
 var assert = require('assert');
@@ -49,7 +50,7 @@ var minifyCSSOptions = {
     }
   },
   advanced: false
-}
+};
 
 module.exports = function(dataSource, spriteTemplate) {
   return new Promise(function(resolve, reject) {
@@ -82,13 +83,13 @@ module.exports = function(dataSource, spriteTemplate) {
       }
     }
 
-    dataSource.pkg = pkg
+    dataSource.pkg = pkg;
     try {
       var style = swigTemplate(dataSource);
       style = new CleanCSS(minifyCSSOptions).minify(style).styles;
-      resolve(style)
+      resolve(style);
     } catch (err) {
       reject(err);
     }
-  })
+  });
 };

@@ -1,10 +1,11 @@
 {
-  "name": "img-spriter-transfrom",
-  "version": "0.1.1",
+  "name": "img-spriter-transform",
+  "version": "1.0.0",
   "description": "converter img spriter meta datasource to style sheet(css)",
   "main": "index.js",
   "scripts": {
-    "test": "node ./test/test.js && node ./test/test-retina.js"
+    "test": "ava ./test/test.js",
+    "coverage": "nyc ava ./test/test.js && nyc report --reporter=text-lcov | coveralls"
   },
   "files": [
     "lib/",
@@ -20,16 +21,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/noyobo/img-spriter-transfrom.git"
+    "url": "git+https://github.com/noyobo/img-spriter-transform.git"
   },
   "bugs": {
-    "url": "https://github.com/noyobo/img-spriter-transfrom/issues"
+    "url": "https://github.com/noyobo/img-spriter-transform/issues"
   },
-  "homepage": "https://github.com/noyobo/img-spriter-transfrom#readme",
+  "homepage": "https://github.com/noyobo/img-spriter-transform#readme",
   "author": "noyobo <noyobo@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "clean-css": "^3.4.10",
     "swig": "^1.4.2"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "nyc": "*",
+    "coveralls": "*"
   }
 }

@@ -1,19 +1,31 @@
 var transfrom = require('../index.js');
 
-var data = require('./data.js');
 var fs = require('fs');
 var path = require('path');
-var assert = require('assert');
+var test = require('ava');
 
-var expectedCss =
-  fs.readFileSync(path.join(__dirname, './sprite.css'))
-  .toString();
+var data = require('./data.js');
+var retinaData = require('./data-retina.js');
 
-transfrom(data)
-  .then(css => {
-    assert.equal(css, expectedCss, 'good job');
-  })
-  .catch(err => {
-    console.log(err);
-    process.exit(1);
-  });
+var expectedCss;
+var retinaExpectedCss;
+
+test.before(t => {
+  expectedCss =
+    fs.readFileSync(path.join(__dirname, './sprite.css'))
+    .toString();
+  retinaExpectedCss =
+    fs.readFileSync(path.join(__dirname, './sprite-retina.css'))
+    .toString();
+});
+
+test('transfrom normal datasource', async t => {
+  const css = transfrom(data);
+  t.same(await css, expectedCss);
+});
+
+
+test('transfrom retina datasource', async t => {
+  const css = transfrom(retinaData);
+  t.same(await css, retinaExpectedCss);
+});
