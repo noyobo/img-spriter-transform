@@ -30,7 +30,7 @@
   "author": "noyobo <noyobo@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "clean-css": "^3.4.10",
+    "clean-css": "^4.1.11",
     "swig": "^1.4.2"
   },
   "devDependencies": {

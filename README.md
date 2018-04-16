@@ -1,5 +1,7 @@
 # img-spriter-transform
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/noyobo/img-spriter-transform.svg)](https://greenkeeper.io/)
+
 [![npm version](http://img.shields.io/npm/v/img-spriter-transform.svg)](https://www.npmjs.org/package/img-spriter-transform) 
 [![npm download](http://img.shields.io/npm/dm/img-spriter-transform.svg)](https://www.npmjs.org/package/img-spriter-transform) 
 [![npm engines](http://img.shields.io/node/v/img-spriter-transform.svg)](https://www.npmjs.org/package/img-spriter-transform) 
