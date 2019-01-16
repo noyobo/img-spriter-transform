@@ -10,22 +10,18 @@ var retinaData = require('./data-retina.js');
 var expectedCss;
 var retinaExpectedCss;
 
-test.before(t => {
-  expectedCss =
-    fs.readFileSync(path.join(__dirname, './sprite.css'))
-    .toString();
-  retinaExpectedCss =
-    fs.readFileSync(path.join(__dirname, './sprite-retina.css'))
-    .toString();
+test.before((t) => {
+  expectedCss = fs.readFileSync(path.join(__dirname, './sprite.css')).toString();
+  retinaExpectedCss = fs.readFileSync(path.join(__dirname, './sprite-retina.css')).toString();
 });
 
-test('transfrom normal datasource', async t => {
-  const css = transfrom(data);
-  t.same(await css, expectedCss);
+test('transfrom normal datasource', async (t) => {
+  const css = await transfrom(data);
+  t.deepEqual(css, expectedCss);
 });
 
-
-test('transfrom retina datasource', async t => {
-  const css = transfrom(retinaData);
-  t.same(await css, retinaExpectedCss);
+test('transfrom retina datasource', async (t) => {
+  const css = await transfrom(retinaData);
+  console.log(css);
+  t.deepEqual(css, retinaExpectedCss);
 });

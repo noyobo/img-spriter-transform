@@ -1,7 +1,5 @@
 'use strict';
 
-var fs = require('fs');
-var path = require('path');
 var assert = require('assert');
 
 var swig = require('swig');
@@ -9,7 +7,6 @@ var CleanCSS = require('clean-css');
 var pkg = require('./package.json');
 var normalSprite = require('./lib/sprite.js');
 var normalSpriteRetina = require('./lib/sprite-retina.js');
-
 
 var has = Object.prototype.hasOwnProperty;
 
@@ -30,7 +27,7 @@ var minifyCSSOptions = {
   mediaMerging: true,
   compatibility: {
     colors: {
-      opacity: true // rgba / hsla
+      opacity: true, // rgba / hsla
     },
     properties: {
       backgroundSizeMerging: false, // background-size to shorthand
@@ -38,18 +35,18 @@ var minifyCSSOptions = {
       ieSuffixHack: true, // \9 suffix hacks on IE
       merging: false, // merging properties into one
       spaceAfterClosingBrace: true, // 'url() no-repeat' to 'url()no-repeat'
-      zeroUnits: true // 0[unit] -> 0
+      zeroUnits: true, // 0[unit] -> 0
     },
     selectors: {
       adjacentSpace: false, // div+ nav Android stock browser hack
       ie7Hack: true, // *+html hack
-      special: /(\-moz\-|\-ms\-|\-o\-|\-webkit\-|:dir\([a-z-]*\)|:first(?![a-z-])|:fullscreen|:left|:read-only|:read-write|:right)/ // special selectors which prevent merging
+      special: /(\-moz\-|\-ms\-|\-o\-|\-webkit\-|:dir\([a-z-]*\)|:first(?![a-z-])|:fullscreen|:left|:read-only|:read-write|:right)/, // special selectors which prevent merging
     },
     units: {
-      rem: true
-    }
+      rem: true,
+    },
   },
-  advanced: false
+  advanced: false,
 };
 
 module.exports = function(dataSource, spriteTemplate) {
@@ -63,13 +60,11 @@ module.exports = function(dataSource, spriteTemplate) {
     }
 
     assert.ok(
-      (typeof dataSource.meta.dpi === 'number' && dataSource.meta.dpi >= 1),
-      'dataSource.meta.dpi must a number, and more than or equal to 1'
+      typeof dataSource.meta.dpi === 'number' && dataSource.meta.dpi >= 1,
+      'dataSource.meta.dpi must a number, and more than or equal to 1',
     );
 
-    assert.ok(dataSource.meta.sprite_path,
-      'dataSource.meta.sprite_path is image url, it required'
-    );
+    assert.ok(dataSource.meta.sprite_path, 'dataSource.meta.sprite_path is image url, it required');
 
     var swigTemplate;
 
