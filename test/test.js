@@ -22,6 +22,5 @@ test('transfrom normal datasource', async (t) => {
 
 test('transfrom retina datasource', async (t) => {
   const css = await transfrom(retinaData);
-  console.log(css);
   t.deepEqual(css, retinaExpectedCss);
 });
