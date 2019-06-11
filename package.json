@@ -33,7 +33,7 @@
     "swig": "^1.4.2"
   },
   "devDependencies": {
-    "ava": "^1.0.0",
+    "ava": "^2.0.0",
     "coveralls": "^3.0.2",
     "nyc": "^14.0.0"
   }
